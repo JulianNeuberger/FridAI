@@ -10,4 +10,4 @@ I will try and expand the number of examples to cover a wide spectrum of differe
 3. Be sure `pip` as well as `python` are in your `PATH` 
 4. Navigate to where you cloned this repository and enter the folder FridAI
 5. Use `pip install -r ./requirements.txt` to install all required packages
-6. Check everything is working by running a arbitrary example (e.g. `python ./mlp/digits.py`)
+6. Check everything is working by running a arbitrary example (e.g. `python ./digits/solution.py`)

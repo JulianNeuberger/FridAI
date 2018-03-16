@@ -33,7 +33,7 @@ model.summary()
 
 # a callback to log loss/accuracy etc. for tensorboard to visualize
 run_name = 'digits-{}-{:%d-%b_%H-%M-%S}'.format(arch, datetime.now())
-tb_callback = callbacks.TensorBoard(log_dir=path.join('logs', run_name))
+tb_callback = callbacks.TensorBoard(log_dir=path.join('digits', 'logs', run_name))
 
 # training the model
 model.fit(digit_features, digit_labels, batch_size=32, epochs=30, validation_split=.2, callbacks=[tb_callback])
@@ -41,9 +41,9 @@ model.fit(digit_features, digit_labels, batch_size=32, epochs=30, validation_spl
 # finally save the model's weights
 # for compatibility reasons we don't save the entire model
 # instead save only the weights, on load build the same model and load them
-model.save_weights(path.join('weights', run_name))
+model.save_weights(path.join('digits', 'weights', run_name))
 
-image = Image.open(path.join('img', '0.bmp'))
+image = Image.open(path.join('digits', 'img', '0.bmp'))
 image.show()
 pixels = image_to_ndarray(image)
 pixels.shape = (1,) + pixels.shape

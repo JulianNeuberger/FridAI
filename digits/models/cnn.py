@@ -30,9 +30,9 @@ def get_model():
     # convolutions are filters, which are useful for finding features (eg. edges)
     # 2D-convolutions take 3D data (see above) and introduce a new dimension:
     # the filtered data
-    hidden_layer = layers.Conv2D(filters=32, kernel_size=(3, 3))(hidden_layer)
-    hidden_layer = layers.Conv2D(filters=32, kernel_size=(3, 3))(hidden_layer)
+    hidden_layer = layers.Conv2D(filters=64, kernel_size=(3, 3))(hidden_layer)
     hidden_layer = layers.Conv2D(filters=32, kernel_size=(1, 1))(hidden_layer)
+    hidden_layer = layers.Conv2D(filters=16, kernel_size=(1, 1))(hidden_layer)
 
     # convert it back to 1D data, so we can map it to the 1D output
     hidden_layer = layers.Flatten()(hidden_layer)
@@ -46,7 +46,7 @@ def get_model():
 
     # actual creation of the model with in- and output layers
     model = engine.Model(inputs=[input_layer], outputs=[output_layer])
-    
+
     # transform into a trainable model by specifying the optimizing function
     # (here stochastic gradient descent),
     # as well as the loss (eg. how big of an error is produced by the model)

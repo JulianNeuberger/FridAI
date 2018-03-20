@@ -6,7 +6,7 @@ I will try and expand the number of examples to cover a wide spectrum of differe
 
 ## How to install?
 1. Clone this repository.
-2. Download python (https://www.python.org/downloads/) if you dont have it already
+2. Download python (https://www.python.org/downloads/) if you dont have it already (careful: 64bit is needed)
 3. Be sure `pip` as well as `python` are in your `PATH` 
 4. Navigate to where you cloned this repository and enter the folder FridAI
 5. Use `pip install -r ./requirements.txt` to install all required packages

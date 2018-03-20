@@ -7,7 +7,8 @@ from keras import callbacks
 from sklearn import datasets
 
 from util import get_model_for_name, AVAILABLE_SOLUTION_ARCHS, image_to_ndarray
-from config import *
+from config import NUM_DIGITS, MAX_FEATURE
+
 
 arch = input('How do you want to solve the problem? Choose one of {}'.format(AVAILABLE_SOLUTION_ARCHS.keys()))
 
@@ -43,10 +44,20 @@ model.fit(digit_features, digit_labels, batch_size=32, epochs=30, validation_spl
 # instead save only the weights, on load build the same model and load them
 model.save_weights(path.join('digits', 'weights', run_name))
 
-image = Image.open(path.join('digits', 'img', '0.bmp'))
+# load our test image and show it
+image = Image.open(path.join('digits', 'img', '7.bmp'))
 image.show()
+
+# convert the image to a numpy array
 pixels = image_to_ndarray(image)
+# add a dimension, which is the batch size dimension (therefore it is 1 for our single sample)
 pixels.shape = (1,) + pixels.shape
+
+# predict the class (which digit?) for this sample
+# model.predict returns a prediction for each input sample, as list
+# the first one corresponds to the first sample
+# here: each prediction is a vector, with [number of digits: 0-9 = 10] entries
+# each entry is a probability of 0 (0%) - 1 (100%), how likely the input sample is this digit
 prediction = model.predict(pixels)
 print('Raw prediction is {}'.format(prediction[0]))
 print('This has to be a "{}"'.format(prediction[0].argmax()))

@@ -30,7 +30,7 @@ You already ran the digits example, while the network trained, it
 produced logs, which can be plotted.
 
 Run `tensorboard --logdir=digits/logs --host=localhost` and use your
-favourite browser to navigate to https://localhost:6006, where you can
+favourite browser to navigate to http://localhost:6006, where you can
 view the training progress. For more infos check
 [this section](#how-do-i-read-the-training-plots)!
 

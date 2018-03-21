@@ -2,7 +2,7 @@ import numpy
 from keras import layers, engine
 from sklearn import datasets
 
-import config
+from digits import config
 
 
 def get_model():

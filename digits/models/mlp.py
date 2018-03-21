@@ -1,6 +1,6 @@
 from keras import layers, engine
 
-import config
+from digits import config
 
 
 def get_model():

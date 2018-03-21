@@ -1,5 +1,4 @@
-import os
-from config import NUM_CLASSES, FEATURE_DIMENSIONALITY
+from cancer.config import NUM_CLASSES, FEATURE_DIMENSIONALITY
 from keras.engine import Model
 from keras.layers import Input, Dense
 from keras.optimizers import Adam, SGD
@@ -10,7 +9,7 @@ def get_model() -> Model:
     # implement an ANN that solves the cancer task
     # (solving means it is better than guessing, which is correct 50% of the time)
     # delete the following (single) line and replace it with your model
-    raise NotImplementedError('You have to implement {}.get_model'.format(os.path.basename(__file__)))
+    raise NotImplementedError('You have to implement {}.get_model'.format(__file__))
 
     # create a new model by specifying input/output layer(s)
     model = Model(inputs=[], outputs=[])

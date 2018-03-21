@@ -6,9 +6,12 @@ from PIL import Image
 from keras import callbacks
 from sklearn import datasets
 
-from util import get_model_for_name, AVAILABLE_SOLUTION_ARCHS, image_to_ndarray
-from config import NUM_DIGITS, MAX_FEATURE
+from digits.util import get_model_for_name, AVAILABLE_SOLUTION_ARCHS, image_to_ndarray
+from digits.config import NUM_DIGITS, MAX_FEATURE
 
+
+# directory of this file
+module_dir = path.dirname(path.realpath(__file__))
 
 arch = input('How do you want to solve the problem? Choose one of {}'.format(AVAILABLE_SOLUTION_ARCHS.keys()))
 
@@ -34,7 +37,8 @@ model.summary()
 
 # a callback to log loss/accuracy etc. for tensorboard to visualize
 run_name = 'digits-{}-{:%d-%b_%H-%M-%S}'.format(arch, datetime.now())
-tb_callback = callbacks.TensorBoard(log_dir=path.join('digits', 'logs', run_name))
+log_dir = path.join(module_dir, 'logs', run_name)
+tb_callback = callbacks.TensorBoard(log_dir=log_dir)
 
 # training the model
 model.fit(digit_features, digit_labels, batch_size=32, epochs=30, validation_split=.2, callbacks=[tb_callback])
@@ -42,10 +46,10 @@ model.fit(digit_features, digit_labels, batch_size=32, epochs=30, validation_spl
 # finally save the model's weights
 # for compatibility reasons we don't save the entire model
 # instead save only the weights, on load build the same model and load them
-model.save_weights(path.join('digits', 'weights', run_name))
+model.save_weights(path.join(module_dir, 'weights', run_name))
 
 # load our test image and show it
-image = Image.open(path.join('digits', 'img', '7.bmp'))
+image = Image.open(path.join(module_dir, 'img', '7.bmp'))
 image.show()
 
 # convert the image to a numpy array

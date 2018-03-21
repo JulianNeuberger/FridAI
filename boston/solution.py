@@ -1,18 +1,19 @@
 from datetime import datetime
-from os import path
 
-from config import NUM_CLASSES
-from keras import utils, callbacks
-from models import get_model
+from boston.config import MAX_TARGET
+from keras import callbacks
+from boston.models import get_model
+from os import path
 from sklearn import datasets
 
-features, labels = datasets.load_breast_cancer(return_X_y=True)
-labels = utils.to_categorical(labels, NUM_CLASSES)
+features, labels = datasets.load_boston(return_X_y=True)
+# normalize targets (so they are in range [0;1]
+labels /= MAX_TARGET
 
 # this is your task, implement the method get_model() in the models.py file
 model = get_model()
 
-run_name = 'cancer-{:%d-%b_%H-%M-%S}'.format(datetime.now())
+run_name = 'boston-{:%d-%b_%H-%M-%S}'.format(datetime.now())
 dir_path = path.dirname(path.realpath(__file__))
 log_dir = path.join(dir_path, 'logs', run_name)
 print('logging to "{}"'.format(log_dir))

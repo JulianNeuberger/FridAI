@@ -1,6 +1,6 @@
 from numpy import asarray
 
-from models import cnn, mlp
+from digits.models import cnn, mlp
 
 
 def image_to_ndarray(image):

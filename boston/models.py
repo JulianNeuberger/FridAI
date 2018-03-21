@@ -9,6 +9,7 @@ def get_model() -> Model:
     # implement an ANN that solves the boston house prices task.
     # solving means we want to approximate an unknown function which,
     # given some features like house size, location etc. predicts it's price
+    # prices are normalized to range [0;1]
 
     # there are some useful imports already, check the imports from config and the
     # different layers from keras.layers!

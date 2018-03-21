@@ -87,3 +87,9 @@ the neural net once.
 
 The y-axis is the loss(error)/accuracy (or whatever metric is measured).
 Low loss and high accuracy are desirable.
+
+A falling loss graph means, that the model is learning! __Careful__:
+Even though the loss graph falls the validation loss graph maybe rising!
+This means your neural net is over-fitting
+([see here](https://en.wikipedia.org/wiki/Overfitting))
+and needs tweaks in its architecture or more data.

@@ -68,6 +68,7 @@ with prepared datasets a little bit more though, check here:
 https://keras.io/datasets/
 
 ## How do I read the training plots?
+![Plot of training loss](https://i.imgur.com/MCBcq7e.png)
 There are (most commonly) four different plots:
 - *loss*: error the network produces while __training__
 - *accuracy*: accuracy in predicting the correct label/class while

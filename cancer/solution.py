@@ -1,9 +1,9 @@
 from datetime import datetime
 from os import path
 
-from config import NUM_CLASSES
+from cancer.config import NUM_CLASSES
 from keras import utils, callbacks
-from models import get_model
+from cancer.models import get_model
 from sklearn import datasets
 
 features, labels = datasets.load_breast_cancer(return_X_y=True)

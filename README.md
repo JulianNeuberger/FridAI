@@ -32,7 +32,7 @@ produced logs, which can be plotted.
 Run `tensorboard --logdir=digits/logs --host=localhost` and use your
 favourite browser to navigate to https://localhost:6006, where you can
 view the training progress. For more infos check
-[this section](##how-do-i-read-the-training-plots)!
+[this section](#how-do-i-read-the-training-plots)!
 
 After you correctly set up everything, have a look at the
 `digits/solution.py`. It contains a working example of a simple yet

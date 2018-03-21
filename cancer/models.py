@@ -13,7 +13,7 @@ def get_model() -> Model:
     raise NotImplementedError('You have to implement {}.get_model'.format(os.path.basename(__file__)))
 
     # create a new model by specifying input/output layer(s)
-    model = Model(inputs=[input_layer], outputs=[output_layer])
+    model = Model(inputs=[], outputs=[])
     # I already chose optimizer and loss function, you won't need to tweak them (but you can of course!)
     optimizer = Adam()
     model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])

@@ -8,7 +8,7 @@ def get_model() -> Model:
     # here starts your task!
     # implement an ANN that solves the iris task
     # (solving means it is better than guessing, which is correct 33% of the time)
-
+    raise NotImplementedError('You have to implement {}.get_model'.format(os.path.basename(__file__)))
 
     # create a new model by specifying input/output layer(s)
     model = Model(inputs=[], outputs=[])

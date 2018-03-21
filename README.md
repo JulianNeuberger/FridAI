@@ -82,7 +82,7 @@ while __testing__ it, which means: accuracy in predicting the correct
 label/class while presenting samples, the network has never seen
 
 The x-axis of each plot is the training progress, measured in epochs.
-One epoch is done, when all training data has been presented to
+One epoch is finished, when all training data has been presented to
 the neural net once.
 
 The y-axis is the loss(error)/accuracy (or whatever metric is measured).

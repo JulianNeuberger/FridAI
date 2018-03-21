@@ -1,7 +1,6 @@
 from boston.config import FEATURE_DIMENSIONALITY
 from keras.engine import Model
 from keras.layers import Input, Dense
-from keras.optimizers import Adam
 
 
 def get_model() -> Model:
@@ -20,6 +19,5 @@ def get_model() -> Model:
     # create a new model by specifying input/output layer(s)
     model = Model(inputs=[], outputs=[])
     # I already chose optimizer and loss function, you won't need to teak them (but you can of course!)
-    optimizer = Adam()
-    model.compile(optimizer=optimizer, loss='categorical_crossentropy', metrics=['accuracy'])
+    model.compile(optimizer='sgd', loss='mse')
     return model

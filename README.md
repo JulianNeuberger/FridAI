@@ -70,7 +70,8 @@ https://keras.io/datasets/
 ## How do I read the training plots?
 ![Plot of training loss](https://i.imgur.com/MCBcq7e.png)
 There are (most commonly) four different plots:
-- *loss*: error the network produces while __training__
+- *loss*: error (difference between prediction and actual value) the
+network produces while __training__
 - *accuracy*: accuracy in predicting the correct label/class while
  __training__
 - *__val__-loss*: error the network produces while __testing__ it,
@@ -81,7 +82,7 @@ while __testing__ it, which means: accuracy in predicting the correct
 label/class while presenting samples, the network has never seen
 
 The x-axis of each plot is the training progress, measured in epochs.
-One epoch is done, when the entirety of training data was presented to
+One epoch is done, when all training data has been presented to
 the neural net once.
 
 The y-axis is the loss(error)/accuracy (or whatever metric is measured).

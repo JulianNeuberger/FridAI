@@ -1,11 +1,5 @@
 from datetime import datetime
 from os import path
-from numpy import random
-
-# for reproducible experiments, you should seed your random generator
-# training of ANNs, as well as their testing is heavily dependent on order
-# therefore it is dependent on chance (==> shuffling of samples!)
-random.seed(1337)
 
 import numpy
 from PIL import Image

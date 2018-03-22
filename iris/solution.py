@@ -1,6 +1,10 @@
 from datetime import datetime
 from os import path
 
+# seed the random generator, for reproducible results
+from numpy import random
+random.seed(1337)
+
 from iris.config import NUM_CLASSES
 from keras import utils, callbacks
 from iris.models import get_model
@@ -8,6 +12,7 @@ from sklearn import datasets
 
 features, labels = datasets.load_iris(return_X_y=True)
 labels = utils.to_categorical(labels, NUM_CLASSES)
+features /= features.max(axis=0)
 
 # this is your task, implement the method get_model() in the models.py file
 model = get_model()

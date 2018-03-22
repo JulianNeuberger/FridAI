@@ -1,6 +1,5 @@
 from datetime import datetime
 
-from boston.config import MAX_TARGET
 from keras import callbacks
 from boston.models import get_model
 from os import path
@@ -8,9 +7,9 @@ from sklearn import datasets
 
 features, labels = datasets.load_boston(return_X_y=True)
 # normalize targets (so they are in range [0;1]
-labels /= MAX_TARGET
+labels /= labels.max()
 # normalize features as well
-features /= features.max()
+features /= features.max(axis=0)
 
 # this is your task, implement the method get_model() in the models.py file
 model = get_model()

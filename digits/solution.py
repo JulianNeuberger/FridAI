@@ -1,6 +1,10 @@
 from datetime import datetime
 from os import path
 
+# seed the random generator, for reproducible results
+from numpy import random
+random.seed(1337)
+
 import numpy
 from PIL import Image
 from keras import callbacks
